@@ -28,9 +28,7 @@
             const day = parseInt(document.getElementById("birthDay").value);
             const year = parseInt(document.getElementById("birthYear").value);
 
-            // Formula
-            // Need pa mag add ng logic para sa ibang Astro signs
-            // So far number muna yung Input ng user instead of month (1-12 instead of Jan to Dec) edit nalang naten lahat.
+            //Astrological Sign
             let astroSign = "";
             if ((month === 'November' && day >= 22) || (month === 'December' && day <= 21)) {
                 astroSign = "Sagittarius";
@@ -57,23 +55,40 @@
             }else if ((month === 'October' && day >= 23) || (month === 'November' && day <= 21)) {
                 astroSign = "Scorpio";
             }
-            // Continue nalang dito sa pag add
-
-            // Formula sa Zodiac Signs
-            // Need pa I fix para tumugma
+            
+            // Zodiac Signs
             const zodiacSigns = ["Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Sheep", "Monkey", "Rooster", "Dog", "Pig", "Rat", "Ox"];
             const zodiacSign = zodiacSigns[(year - 1902) % 12];
 
-            // Define birthstone and birth flower information
-            const birthstoneInfo = {
-                1: { name: "Garnet", flower: "Carnation" },
-                2: { name: "Amethyst", flower: "Violet" },
-                3: { name: "Aquamarine", flower: "Daffodil" },
-                // Add more months here...
-            };
-
-            const birthstone = birthstoneInfo[month] ? birthstoneInfo[month].name : "Unknown";
-            const birthflower = birthstoneInfo[month] ? birthstoneInfo[month].flower : "Unknown";
+            // Birthstone and Birth Flower
+            let birthstone = "", birthflower = "";
+            if (month === 'January') {
+                birthstone = "Garnet", birthflower = "Carnation";
+            }else if (month === 'February') {
+                birthstone = "Amethyst", birthflower = "Violet";
+            }else if (month === 'March') {
+                birthstone = "Aquamarine", birthflower = "Jonquil";
+            }else if (month === 'April') {
+                birthstone = "Diamond", birthflower = "Sweet Pea";
+            }else if (month === 'May') {
+                birthstone = "Emerald", birthflower = "Lily of the Valley";
+            }else if (month === 'June') {
+                birthstone = "Pearl", birthflower = "Rose";
+            }else if (month === 'July') {
+                birthstone = "Ruby", birthflower = "Larkspur";
+            }else if (month === 'August') {
+                birthstone = "Peridot", birthflower = "Gladiola";
+            }else if (month === 'September') {
+                birthstone = "Sapphire", birthflower = "Aster";
+            }else if (month === 'October') {
+                birthstone = "Opal", birthflower = "Calendula";
+            }else if (month === 'November') {
+                birthstone = "Amethyst", birthflower = "Chrysanthemum";
+            }else if (month === 'December') {
+                birthstone = "Turquoise", birthflower = "Narcissus";
+            }
+        
+            
 
             // Display the information
             document.getElementById("astroSign").textContent = astroSign;
