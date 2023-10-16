@@ -1,0 +1,66 @@
+<head>
+    <title>Birth Information</title>
+</head>
+<body>
+    <h1>Enter Your Birth Date</h1>
+    <label for="birthMonth">Birth Month: </label>
+    <input type="text" id="birthMonth"><br>
+
+    <label for="birthDay">Birth Day: </label>
+    <input type="text" id="birthDay"><br>
+
+    <label for="birthYear">Birth Year: </label>
+    <input type="text" id="birthYear"><br>
+
+    <button onclick="calculateInfo()">Submit</button>
+
+    <div id="output">
+        <h2>Your Information</h2>
+        <p>Astrological Sign: <span id="astroSign"></span></p>
+        <p>Chinese Zodiac Sign: <span id="zodiacSign"></span></p>
+        <p>Birthstone: <span id="birthstone"></span></p>
+        <p>Birth Flower: <span id="birthflower"></span></p>
+    </div>
+
+    <script>
+        function calculateInfo() {
+            const month = parseInt(document.getElementById("birthMonth").value);
+            const day = parseInt(document.getElementById("birthDay").value);
+            const year = parseInt(document.getElementById("birthYear").value);
+
+            // Formula
+            // Need pa mag add ng logic para sa ibang Astro signs
+            // So far number muna yung Input ng user instead of month (1-12 instead of Jan to Dec) edit nalang naten lahat.
+            let astroSign = "";
+            if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+                astroSign = "Aries";
+            } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+                astroSign = "Taurus";
+            }
+            // Continue nalang dito sa pag add
+
+            // Formula sa Zodiac Signs
+            // Need pa I fix para tumugma
+            const zodiacSigns = ["Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig"];
+            const zodiacSign = zodiacSigns[(year - 1900) % 12];
+
+            // Define birthstone and birth flower information
+            const birthstoneInfo = {
+                1: { name: "Garnet", flower: "Carnation" },
+                2: { name: "Amethyst", flower: "Violet" },
+                3: { name: "Aquamarine", flower: "Daffodil" },
+                // Add more months here...
+            };
+
+            const birthstone = birthstoneInfo[month] ? birthstoneInfo[month].name : "Unknown";
+            const birthflower = birthstoneInfo[month] ? birthstoneInfo[month].flower : "Unknown";
+
+            // Display the information
+            document.getElementById("astroSign").textContent = astroSign;
+            document.getElementById("zodiacSign").textContent = zodiacSign;
+            document.getElementById("birthstone").textContent = birthstone;
+            document.getElementById("birthflower").textContent = birthflower;
+        }
+    </script>
+</body>
+</html>
