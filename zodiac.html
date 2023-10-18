@@ -1,27 +1,29 @@
 <head>
     <title>Birth Information</title>
+    <link rel="stylesheet" type="text/css" href="zodiac.css">
 </head>
 <body>
-    <h1>Enter Your Birth Date</h1>
-    <label for="birthMonth">Birth Month: </label>
-    <input type="text" id="birthMonth"><br>
+    <div class="container">
+        <h1>Enter Your Birth Date</h1>
+        <label for="birthMonth">Birth Month: </label>
+        <input type="text" id="birthMonth">
 
-    <label for="birthDay">Birth Day: </label>
-    <input type="text" id="birthDay"><br>
+        <label for="birthDay">Birth Day: </label>
+        <input type="text" id="birthDay">
 
-    <label for="birthYear">Birth Year: </label>
-    <input type="text" id="birthYear"><br>
+        <label for="birthYear">Birth Year: </label>
+        <input type="text" id="birthYear">
 
-    <button onclick="calculateInfo()">Submit</button>
+        <button onclick="calculateInfo()">Submit</button>
 
-    <div id="output">
-        <h2>Your Information</h2>
-        <p>Astrological Sign: <span id="astroSign"></span></p>
-        <p>Chinese Zodiac Sign: <span id="zodiacSign"></span></p>
-        <p>Birthstone: <span id="birthstone"></span></p>
-        <p>Birth Flower: <span id="birthflower"></span></p>
+        <div id="output">
+            <h2>Your Information</h2>
+            <p>Astrological Sign: <span id="astroSign"></span></p>
+            <p>Chinese Zodiac Sign: <span id="zodiacSign"></span></p>
+            <p>Birthstone: <span id="birthstone"></span></p>
+            <p>Birth Flower: <span id="birthflower"></span></p>
+        </div>
     </div>
-
     <script>
         function calculateInfo() {
             const month = document.getElementById("birthMonth").value;
@@ -65,7 +67,7 @@
             if (month === 'January') {
                 birthstone = "Garnet", birthflower = "Carnation";
             }else if (month === 'February') {
-                birthstone = "Amethyst", birthflower = "Violet";
+                birthstone = "Ame  thyst", birthflower = "Violet";
             }else if (month === 'March') {
                 birthstone = "Aquamarine", birthflower = "Jonquil";
             }else if (month === 'April') {
